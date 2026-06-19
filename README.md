@@ -36,6 +36,7 @@ To learn low-level embedded software development and build industry-relevant ski
 ---
 
 ## ✅ Day 1 – GPIO Driver Development
+##Day 02 progress planned.
 
 ### Objective
 
