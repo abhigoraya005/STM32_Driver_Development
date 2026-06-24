@@ -14,6 +14,8 @@ To learn low-level embedded software development and build industry-relevant ski
 * STM32 HAL
 * PICSimLab Simulation
 
+---
+
 ## 📅 Project Roadmap
 
 | Day      | Driver / Module                | Status    |
@@ -22,11 +24,11 @@ To learn low-level embedded software development and build industry-relevant ski
 | ✅ Day 2  | GPIO Input/Button Driver       | Completed |
 | ✅ Day 3  | UART Driver                    | Completed |
 | ✅ Day 4  | UART Command Processing System | Completed |
-| ⏳ Day 5  | GPIO Interrupt Driver          | Planned   |
-| ⏳ Day 6  | ADC Driver                     | Planned   |
-| ⏳ Day 7  | Multi-Channel ADC              | Planned   |
-| ⏳ Day 8  | Timer Driver                   | Planned   |
-| ⏳ Day 9  | PWM Driver                     | Planned   |
+| ✅ Day 5  | GPIO Interrupt Driver          | Completed |
+| ✅ Day 6  | ADC Driver                     | Completed |
+| ✅ Day 7  | Multi-Channel ADC Driver       | Completed |
+| ✅ Day 8  | Timer Driver                   | Completed |
+| ✅ Day 9  | PWM Driver                     | Completed |
 | ⏳ Day 10 | SPI Driver                     | Planned   |
 | ⏳ Day 11 | I2C Driver                     | Planned   |
 | ⏳ Day 12 | Driver Integration             | Planned   |
@@ -36,10 +38,6 @@ To learn low-level embedded software development and build industry-relevant ski
 ---
 
 # ✅ Day 1 – GPIO Driver Development
-
-### Objective
-
-Develop a reusable GPIO driver instead of directly calling HAL functions inside application code.
 
 ### Features Implemented
 
@@ -62,21 +60,9 @@ Core/Src/gpio_driver.c
 * Driver Abstraction
 * Firmware Modularity
 
-### Build Status
-
-```text
-Build Finished
-0 Errors
-0 Warnings
-```
-
 ---
 
 # ✅ Day 2 – GPIO Input/Button Driver
-
-### Objective
-
-Develop reusable APIs for reading button inputs using GPIO input mode.
 
 ### Features Implemented
 
@@ -85,13 +71,6 @@ Develop reusable APIs for reading button inputs using GPIO input mode.
 * Driver-Based Input Handling
 * Modular Firmware Structure
 
-### Files Created
-
-```text
-Core/Inc/gpio_driver.h
-Core/Src/gpio_driver.c
-```
-
 ### Skills Learned
 
 * Digital Input Handling
@@ -99,21 +78,9 @@ Core/Src/gpio_driver.c
 * Embedded Driver Design
 * STM32 GPIO Input Configuration
 
-### Build Status
-
-```text
-Build Finished
-0 Errors
-0 Warnings
-```
-
 ---
 
 # ✅ Day 3 – UART Driver Development
-
-### Objective
-
-Develop a reusable UART driver for serial communication.
 
 ### Features Implemented
 
@@ -129,16 +96,6 @@ Core/Inc/uart_driver.h
 Core/Src/uart_driver.c
 ```
 
-### Driver APIs
-
-```c
-void UART_Transmit(UART_HandleTypeDef *huart,
-                   char *msg);
-
-void UART_Receive(UART_HandleTypeDef *huart,
-                  uint8_t *data);
-```
-
 ### Skills Learned
 
 * USART Configuration
@@ -146,21 +103,9 @@ void UART_Receive(UART_HandleTypeDef *huart,
 * Embedded Driver Development
 * Modular Firmware Design
 
-### Build Status
-
-```text
-Build Finished
-0 Errors
-0 Warnings
-```
-
 ---
 
 # ✅ Day 4 – UART Command Processing System
-
-### Objective
-
-Build a UART-based command processing application using the custom UART driver.
 
 ### Features Implemented
 
@@ -168,21 +113,12 @@ Build a UART-based command processing application using the custom UART driver.
 * Command Parsing Logic
 * Command Response System
 * Serial Terminal Communication
-* Driver Reusability Demonstration
 
 ### Commands Tested
 
 ```text
 1 → LED ON
 0 → LED OFF
-```
-
-### Files Used
-
-```text
-Core/Inc/uart_driver.h
-Core/Src/uart_driver.c
-Core/Src/main.c
 ```
 
 ### Skills Learned
@@ -192,13 +128,140 @@ Core/Src/main.c
 * Embedded Debugging
 * Serial Terminal Integration
 
-### Build Status
+---
+
+# ✅ Day 5 – GPIO Interrupt Driver
+
+### Features Implemented
+
+* External Interrupt (EXTI) Configuration
+* Interrupt Callback Handling
+* Push Button Triggered Events
+* LED Control Using Interrupts
+
+### Files Created
 
 ```text
-Build Finished
-0 Errors
-0 Warnings
+Core/Inc/interrupt_driver.h
+Core/Src/interrupt_driver.c
 ```
+
+### Skills Learned
+
+* EXTI Configuration
+* NVIC Configuration
+* Interrupt Service Routines
+* Event Driven Programming
+
+---
+
+# ✅ Day 6 – ADC Driver Development
+
+### Features Implemented
+
+* ADC Initialization
+* Single Channel ADC Read
+* Analog Sensor Data Acquisition
+* ADC Driver Abstraction
+
+### Files Created
+
+```text
+Core/Inc/adc_driver.h
+Core/Src/adc_driver.c
+```
+
+### Driver APIs
+
+```c
+uint32_t ADC_Read(ADC_HandleTypeDef *hadc);
+```
+
+### Skills Learned
+
+* Analog-to-Digital Conversion
+* ADC Configuration
+* Sensor Interfacing
+* Embedded Driver Design
+
+---
+
+# ✅ Day 7 – Multi-Channel ADC Driver
+
+### Features Implemented
+
+* Multi-Channel Analog Data Acquisition
+* Sequential ADC Channel Reading
+* Sensor Monitoring Framework
+* UART-Based Data Logging
+
+### Skills Learned
+
+* Multi-Channel ADC
+* Data Acquisition Systems
+* Sensor Integration
+* Embedded Monitoring Systems
+
+---
+
+# ✅ Day 8 – Timer Driver Development
+
+### Features Implemented
+
+* Timer Initialization
+* Periodic Time Base Generation
+* Software Timing Functions
+* Driver Abstraction
+
+### Files Created
+
+```text
+Core/Inc/timer_driver.h
+Core/Src/timer_driver.c
+```
+
+### Skills Learned
+
+* STM32 Timers
+* Time Base Generation
+* Embedded Scheduling
+* Driver Development
+
+---
+
+# ✅ Day 9 – PWM Driver Development
+
+### Features Implemented
+
+* PWM Signal Generation
+* PWM Start Function
+* Duty Cycle Control
+* Brightness Control Simulation
+
+### Files Created
+
+```text
+Core/Inc/pwm_driver.h
+Core/Src/pwm_driver.c
+```
+
+### Driver APIs
+
+```c
+void PWM_Start(TIM_HandleTypeDef *htim,
+               uint32_t Channel);
+
+void PWM_SetDutyCycle(TIM_HandleTypeDef *htim,
+                      uint32_t Channel,
+                      uint16_t DutyCycle);
+```
+
+### Skills Learned
+
+* Pulse Width Modulation (PWM)
+* Timer Output Compare Mode
+* Duty Cycle Control
+* Motor / LED Control Fundamentals
 
 ---
 
@@ -209,26 +272,34 @@ Build Finished
 * Driver Development
 * Peripheral Programming
 * Firmware Architecture
-* Debugging & Testing
-* Embedded Software Design
+* Embedded Debugging
+* ADC Programming
 * UART Communication
+* Interrupt Programming
+* Timer Programming
+* PWM Generation
+* Sensor Interfacing
 * Driver Abstraction
 
 ---
 
 ## 🚀 Future Goals
 
-* Build complete peripheral drivers
-* Learn FreeRTOS
-* Learn STM32 Register-Level Programming
-* Strengthen Embedded Linux concepts
-* Prepare for Embedded and Semiconductor placements
+* SPI Driver Development
+* I2C Driver Development
+* Driver Integration Framework
+* Driver Testing Framework
+* Complete Driver Library
+* Register-Level Programming
+* FreeRTOS Integration
+* Embedded Linux Fundamentals
+* Semiconductor Placement Preparation
 
 ---
 
 ## 👨‍💻 Author
 
-Abhiney Kumar
+**Abhiney Kumar**
 B.Tech ECE (4th Semester)
 Dr. B.R. Ambedkar National Institute of Technology, Jalandhar
 
