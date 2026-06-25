@@ -1,0 +1,3 @@
+../Core/Src/spi_driver.c:3:19:SPI_Transmit	1
+../Core/Src/spi_driver.c:15:19:SPI_Receive	1
+../Core/Src/spi_driver.c:27:19:SPI_TransmitReceive	1

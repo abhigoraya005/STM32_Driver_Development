@@ -1,0 +1,5 @@
+../Core/Src/gpio_driver.c:3:6:GPIO_Init_Output	1
+../Core/Src/gpio_driver.c:15:6:GPIO_WritePin	1
+../Core/Src/gpio_driver.c:22:6:GPIO_TogglePin	1
+../Core/Src/gpio_driver.c:28:6:GPIO_Init_Input	1
+../Core/Src/gpio_driver.c:40:15:GPIO_ReadPin	1
